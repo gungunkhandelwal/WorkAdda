@@ -1,0 +1,9 @@
+<% layout("/layouts/boilerplate") %> 
+    
+
+<h1>All Notes</h1>
+<ul>
+    <% for(let note of allNotes) { %>
+        <li><a href="/Notes/<%=note._id %>"><%= note.title %></a></li>
+   <% } %>
+</ul>
