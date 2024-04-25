@@ -1,9 +1,15 @@
 <% layout("/layouts/boilerplate") %> 
     
-
+<div class="notes-data">
 <h1>All Notes</h1>
-<ul>
-    <% for(let note of allNotes) { %>
-        <li><a href="/Notes/<%=note._id %>"><%= note.title %></a></li>
-   <% } %>
-</ul>
+<% for(let note of allNotes) { %>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title"><%= note.title %></h5>
+    <p class="card-text"><%= note.description %></p>
+    <a href="#" class="card-link">Download Here</a>
+    <a href="/Notes/<%=note._id %>" class="card-link">Read More</a>
+    </div>
+</div>
+<% } %>
+</div>
