@@ -4,6 +4,8 @@
 <h1>All Notes</h1>
 <% for(let note of allNotes) { %>
 <div class="card" style="width: 18rem;">
+    <div class="card col note-card">
+        <img src="<%= note.image.url %>" class="card-img-top" alt="Note_image" style="height:20rem">
     <div class="card-body">
     <h5 class="card-title"><%= note.title %></h5>
     <p class="card-text"><%= note.description %></p>
