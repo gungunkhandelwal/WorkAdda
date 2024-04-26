@@ -2,8 +2,9 @@
     
 <div class="notes-data">
 <h1>All Notes</h1>
+<div class="row  row-cols-lg-3  row-cols-md-2 row-cols-sm-1 mt-3">
 <% for(let note of allNotes) { %>
-<div class="card" style="width: 18rem;">
+    <!-- <a href="/Notes/<%=note._id %>" class="card-link">Read More</a> -->
     <div class="card col note-card">
         <img src="<%= note.image.url %>" class="card-img-top" alt="Note_image" style="height:20rem">
     <div class="card-body">
@@ -14,4 +15,5 @@
     </div>
 </div>
 <% } %>
+
 </div>
