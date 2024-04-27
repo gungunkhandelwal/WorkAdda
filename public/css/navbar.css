@@ -1,3 +1,7 @@
 body .navbar-nav{
     margin-left:75%;
 }
+body .header{
+    background-color: black;
+    color: white;
+}
