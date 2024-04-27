@@ -1,7 +1,20 @@
 body .navbar-nav{
     margin-left:75%;
 }
-body .header{
-    background-color: black;
-    color: white;
+
+.note-card{
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 55vh;
+    border: 2px solid black;
+    box-shadow: 3px 3px 2px black;
 }
+.note-card-img{
+    height: 26vh;
+    width: 30vh;
+    margin-left: 15%;
+    margin-top: 5px;
+}
+
+
+
