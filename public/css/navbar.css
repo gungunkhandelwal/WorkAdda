@@ -1,3 +1,12 @@
 body .navbar-nav{
     margin-left:75%;
 }
+
+.notes-data{
+    background-color: bisque;
+    margin-right: 20px;
+    margin-top: 25px;
+    display: flex;
+    width: 200vh;
+
+}
