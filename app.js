@@ -9,6 +9,8 @@ const ejsMate = require("ejs-mate");
 const user= require("./routes/user.js");
 const flash =require("connect-flash");
 const List =require("./models/List.js")
+const NoteRouter=require("./routes/List.js");
+
 
 const mongoose =require("mongoose");
 
@@ -67,21 +69,9 @@ app.use((req, res,next) => {
 });
 
 
-
+app.use("/Notes",NoteRouter);
 app.use("/",user);
 
-//index route
-app.get("/Notes",async(req,res)=>{
-    const allNotes= await List.find({});
-    res.render("Notes/index.ejs",{allNotes});
-});
-
-//show route
-app.get("/Notes/:id",async(req,res)=>{
-    let { id } =req.params;
-    const note =await List.findById(id);
-    res.render("Notes/show.ejs",{note});
-})
 
 
 app.listen(8080,()=>{
