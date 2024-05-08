@@ -10,6 +10,7 @@ const user= require("./routes/user.js");
 const flash =require("connect-flash");
 const List =require("./models/List.js")
 const NoteRouter=require("./routes/List.js");
+const ProgramRouter=require("./routes/Program.js");
 
 
 const mongoose =require("mongoose");
@@ -70,6 +71,7 @@ app.use((req, res,next) => {
 
 
 app.use("/Notes",NoteRouter);
+app.use("/Program",ProgramRouter);
 app.use("/",user);
 
 
