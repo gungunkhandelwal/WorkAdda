@@ -13,6 +13,8 @@ const Program=require("./models/Program.js")
 const NoteRouter=require("./routes/List.js");
 const ProgramRouter=require("./routes/Program.js");
 
+
+
 const mongoose =require("mongoose");
 
 
@@ -70,7 +72,7 @@ app.use((req, res,next) => {
 });
 
 
-
+app.use("/Notes",NoteRouter);
 app.use("/",user);
 
 
