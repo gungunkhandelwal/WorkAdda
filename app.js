@@ -8,7 +8,8 @@ const session =require("express-session");
 const ejsMate = require("ejs-mate");
 const user= require("./routes/user.js");
 const flash =require("connect-flash");
-const List =require("./models/List.js")
+const List =require("./models/List.js");
+const Program=require("./models/Program.js")
 const NoteRouter=require("./routes/List.js");
 const ProgramRouter=require("./routes/Program.js");
 
