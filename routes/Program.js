@@ -14,6 +14,11 @@ router.get("/",async(req,res)=>{
 router.get("/:id",async(req,res)=>{
     let { id } =req.params;
     const note =await Program.findById(id);
+    if(!req.isAuthenticated()){
+        req.session.redirectUrl =req.originalUrl;
+        req.flash("error","you must be logged first");
+       return  res.redirect("/login");
+    }
     res.render("Program/show.ejs",{note});
 });
 module.exports = router;
