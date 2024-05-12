@@ -6,7 +6,7 @@ const sampleData=[
             url:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png"
         },
         pdf:{
-            link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+            link: "https://drive.google.com/file/d/1A18tqTkbD80SnfEArm633iEsqP_FPhUK/view?usp=sharing"
         }
     },
     {
@@ -16,7 +16,7 @@ const sampleData=[
             url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3dvurwfqMolKjc2EBcoALj8L1nFWlSGtNF6yeu4ONXw&s"
         },
         pdf:{
-            link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+            link:"https://drive.google.com/file/d/1A18tqTkbD80SnfEArm633iEsqP_FPhUK/view?usp=sharing"
         }
     },
     {
@@ -26,7 +26,7 @@ const sampleData=[
             url:"https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fd0hst9r97gq50860kpq0.png"
         },
         pdf:{
-            link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+            link:"https://drive.google.com/file/d/1A18tqTkbD80SnfEArm633iEsqP_FPhUK/view?usp=sharing"
         }
     },
     {

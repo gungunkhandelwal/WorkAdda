@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const initData = require("./data.js");
-const List = require("../models/List.js");
+const Program = require("../models/Program.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/NotesAdda";
 
@@ -17,8 +17,8 @@ async function main() {
 }
 
 const initDB = async() =>{
-    await List.deleteMany({});
-    await List.insertMany(initData.data);
+    await Program.deleteMany({});
+    await Program.insertMany(initData.data);
     console.log("data was initialized");
 }
 
