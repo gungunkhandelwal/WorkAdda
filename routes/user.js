@@ -1,10 +1,8 @@
 const express =require("express");
 const router=express.Router();
 const User =require("../models/user.js");
-
-router.get("/login",(req,res)=>{
-    res.render("users/login.ejs");
-});
+const passport=require("passport");
+const { saveRedirectUrl }=require("../middleware.js")
 
 
 router.get("/signup",(req,res)=>{
@@ -31,6 +29,16 @@ router.post("/signup",async(req,res)=>{
     
 });
 
+router.get("/login",(req,res)=>{
+    res.render("users/login.ejs");
+});
+
+router.post("/login",saveRedirectUrl,passport.authenticate("local",{failureRedirect :"/login",failureFlash:true}),async(req,res)=>{
+    req.flash("success","welcome to NoteAdda! you are logged in!");
+    let redirectUrl =res.locals.redirectUrl || "/Notes";
+    res.redirect(redirectUrl);
+
+});
 
 
 module.exports=router;
