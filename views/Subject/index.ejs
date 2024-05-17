@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate") %> 
     
 <div class="notes-data">
-<h1>Programmings Notes</h1>
+<h1>Subject Notes</h1>
 <div class="row  row-cols-lg-3  row-cols-md-2 row-cols-sm-1 mt-3">
 <% for(let note of allNotes) { %>
     <div class="card col note-card">
@@ -11,7 +11,7 @@
 	<hr>
     <p class="card-text"><%= note.description %></p>
     
-    <a href="/Program/<%=note._id %>" class="card-link">Read More</a>
+    <a href="/Subject/<%=note._id %>" class="card-link">Read More</a>
     </div>
 </div>
 <% } %>

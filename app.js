@@ -12,6 +12,7 @@ const List =require("./models/List.js");
 const Program=require("./models/Program.js")
 const NoteRouter=require("./routes/List.js");
 const ProgramRouter=require("./routes/Program.js");
+const SubjectRouter=require("./routes/Subject.js");
 
 
 const mongoose =require("mongoose");
@@ -73,6 +74,7 @@ app.use((req, res,next) => {
 
 app.use("/Notes",NoteRouter);
 app.use("/Program",ProgramRouter);
+app.use("/Subject",SubjectRouter);
 app.use("/",user);
 
 
