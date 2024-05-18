@@ -28,9 +28,13 @@
             <nav>
                 <h2>NotesAdda</h2>
                 <div id="nav-part2">
-                    <h4><a href="/login">Login</a></h4>
-                    <h4><a href="/login">Logout</a></h4>
-                    <h4><a href="/signup">Signup</a></h4>
+                    <% if(!currUser) { %>
+                        <h4><a href="/login">Login</a></h4>
+                        <h4><a href="/signup">Signup</a></h4>
+                   <% } %>
+                   <% if(currUser) { %>
+                    <h4><a href="/logout">Logout</a></h4>
+                    <% } %>
                 </div>
             </nav>
             <div id="center">

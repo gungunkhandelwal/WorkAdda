@@ -20,6 +20,29 @@ const sampleData2=[
          link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
      }
  },
+ 
+{
+    title:"Computer Network Notes" ,
+    description:"Computer Networking is the practice of connecting computers together to enable communication and data exchange between them. In general, Computer Network is a collection of two or more computers. It helps users to communicate more easily. In this article, we are going to discuss the basics which everyone must know before going deep into Computer Networking.",
+     image:{
+         url:"https://media.geeksforgeeks.org/wp-content/uploads/20230406152358/CN-(1).jpg"
+     },
+     pdf:{
+         link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+     }
+ },
+ 
+{
+    title:"Matrix Notes" ,
+    description:"Matrix is a rectangular array of numbers, symbols, points, or characters each belonging to a specific row and column. A matrix is identified by its order which is given in the form of rows ⨯ and columns. The numbers, symbols, points, or characters present inside a matrix are called the elements of a matrix. The location of each element is given by the row and column it belongs to.",
+     image:{
+         url:"https://media.geeksforgeeks.org/wp-content/uploads/20240502185604/Matrix-in-Maths.webp"
+     },
+     pdf:{
+         link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+     }
+ },
+ 
 
 
 ]

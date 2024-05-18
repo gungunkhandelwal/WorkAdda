@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const initData = require("./data.js"
+const initData = require("./data.js");
 const Program = require("../models/Program.js");
 
 const initData2=require("./data2.js");
-const Program = require("../models/Program.js");
+
 const Subject =require("../models/Subject.js")
 
 
