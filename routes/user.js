@@ -40,5 +40,16 @@ router.post("/login",saveRedirectUrl,passport.authenticate("local",{failureRedir
 
 });
 
+router.get("/logout",(req,res,next)=>{
+    req.logout((err)=>{
+        if(err){
+           return next(err);
+        }
+        req.flash("success","you are logout");
+        res.redirect("/Notes");
+    })
+});
+
+
 
 module.exports=router;
