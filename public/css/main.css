@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Comic Neue;
+}
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+#main {
+    position: relative;
+    z-index: 10;
+}
+
+#page1 {
+    min-height: 69vh;
+    width: 100%;
+    color: #fff;
+    background-color: #111;
+    position: relative;
+    padding: 0 2vw;
+}
+
+nav {
+    padding: 2vw 0vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    justify-content: space-between;
+}
+
+#nav-part2 {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+
+#nav-part2 h4 {
+    padding: 10px 20px;
+    border: 1px solid #fffff7;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #fff;
+    transition: all ease 0.4s;
+    position: relative;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+
+#nav-part2 h4::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+}
+
+#nav-part2 h4:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+#nav-part2 h4 a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+}
+
+#nav-part2 h4:hover a {
+    color: #111;
+}
+
+#center {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #FFFFF7;
+    padding-bottom: 2.5vw;
+}
+
+#left h3 {
+    width: 25vw;
+    font-size: 1.8vw;
+    line-height: 2vw;
+}
+
+#left a {
+    text-decoration: none;
+    background-color: #03c04a;
+    border-radius: 5px;
+}
+
+#center h2 {
+    font-size: 6vw;
+    text-align: right;
+    line-height: 7vw;
+}
+
+#page2 {
+    min-height: 90vh;
+    width: 100%;
+    background-color: #111;
+    padding: 2vw 0;
+    position: relative;
+    color: #fff;
+}
+
+.imageSlider {
+    width: 85%;
+    height: 70vh;
+    background-image: url('https://thumbs.dreamstime.com/b/young-people-doing-group-study-library-university-students-sitting-together-table-books-laptop-happy-79777174.jpg');
+    background-size: 100% 100%;
+    margin-left: 8%;
+    box-shadow: rgba(149, 157, 165, 0.2) 8px 10px 24px;
+    border-radius: 10px;
+    animation: changeImage 20s linear infinite;
+}
+
+@keyframes changeImage {
+    0% {
+        background-image: url('https://thumbs.dreamstime.com/b/young-people-doing-group-study-library-university-students-sitting-together-table-books-laptop-happy-79777174.jpg');
+    }
+
+    25% {
+        background-image: url('https://w0.peakpx.com/wallpaper/453/299/HD-wallpaper-study-quotes-books-background-study-motivation.jpg');
+    }
+
+    50% {
+        background-image: url('https://i.pinimg.com/736x/ed/ef/2e/edef2e649a7b02a67f3d6fe9476c06f7.jpg');
+    }
+
+    75% {
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSki2ZvFG4qzM2wth5jpjANCDPMPd1Xh1-IX3LgjjqTUQ&s');
+    }
+
+    100% {
+        background-image: url('https://lh3.googleusercontent.com/proxy/JBiwW81T72i2coImGnx-SQUslhwmluwEycIwL_5IwdAwTbVTfKlpR5MEitRVhmrJZ5q8_QEN_ZprAMOMsI3Kkp0VtnjyDHYU5lth2jwRkrdUkCPgvBag0w');
+    }
+}
+
+#moving-text {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: 20px;
+}
+
+#moving-text::-webkit-scrollbar {
+    display: none;
+}
+
+.con {
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#moving-text h1 {
+    font-size: 5vw;
+    display: inline-block;
+}
+
+#gola {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #FFFFF7;
+    margin: 1vw 1vw;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#page3 {
+    background-color: #fff;
+    color: #111;
+    width: 100%;
+    min-height: 130vh;
+    position: relative;
+    padding: 2vw 0;
+}
+
+#page3 h1 {
+    font-size: 5vw;
+    font-weight: 800;
+    text-align: center;
+}
+
+.about {
+    width: 80vw;
+    line-height: 3vw;
+    font-size: 2vw;
+    margin-left: 10%;
+    padding: 1vw 0;
+}
+
+#team {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+}
+
+#team h3 {
+    text-align: center;
+    font-weight: 400;
+    text-decoration: underline
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.member_card {
+    background-color: white;
+    border: 1px solid #111;
+    width: 14rem;
+    height: 75vh;
+    border-radius: 15vw;
+}
+
+.member_card img {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    margin-top: 2vw;
+    margin-left: 28%;
+    border: 3px solid #111;
+}
+
+.member_card h4 {
+    text-align: center;
+    padding-top: 2vw;
+    text-decoration: underline;
+
+}
+
+.member_card h5 {
+    font-size: 1.5vw;
+    text-align: center;
+
+}
+
+.quotes {
+    width: 12rem;
+    height: 9vh;
+    font-size: 1.5vw;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2vh;
+    margin-left: 4px;
+}
+
+.member_card:hover {
+    box-shadow: rgba(24, 25, 25, 0.2) 10px 10px 20px 20px;
+}
+
+
+#footer {
+    min-height: 40vh;
+    width: 100%;
+    background-color: #111;
+    color: #FFFFF7;
+    bottom: 0;
+    position: relative;
+    padding: 1vw 3vw;
+}
+
+#wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #FFFFF7;
+    padding-bottom: 2.5vw;
+}
+
+.contact {
+    padding-top: 1vw;
+}
+
+.contact form {
+    margin-top: 2vw;
+    gap: 5px;
+}
+
+.email_field {
+    border-radius: 5px;
+}
+
+.social a {
+    color: #FFFFF7;
+}
+
+.social i {
+    padding: 2vw 2vw;
+}
+
+.social a:hover {
+    opacity: 0.5;
+}
+
+#something {
+    text-align: center;
+    margin-top: 3vw;
+}
+
+.title h3 {
+    font-weight: 700;
+}
+
+.title p {
+    font-size: 1.5vw;
+    line-height: 1vw;
+}
+
+.security span a {
+    color: #FFFFF7;
+    text-decoration: none;
+    padding: 1vw 1vw;
+}
+
+.security span a:hover {
+    opacity: 0.5;
+}
+
+
+/* Media Query */
+
+@media(max-width:850px) {
+    .member_card {
+        width: 12rem;
+        height: 60vh;
+
+    }
+
+    .quotes {
+        font-size: 1.5vw;
+        width: 9rem;
+        margin-left: 10%;
+    }
+
+    #page3 {
+        min-height: 110vh;
+    }
+
+}
+
+@media (max-width:650px) {
+    #center {
+        min-height: 50vh;
+    }
+
+    #page3 {
+        min-height: 100vh;
+    }
+
+    .member_card {
+        width: 12rem;
+        height: 55vh;
+
+    }
+
+    .quotes {
+        font-size: 1.5vw;
+        width: 6rem;
+        margin-left: 26%;
+    }
+}

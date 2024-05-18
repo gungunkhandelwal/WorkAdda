@@ -74,6 +74,7 @@ app.use((req, res,next) => {
 
 
 app.use("/Notes",NoteRouter);
+app.use("/Program",ProgramRouter);
 app.use("/",user);
 
 
