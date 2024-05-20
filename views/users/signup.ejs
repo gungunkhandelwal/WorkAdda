@@ -1,27 +1,50 @@
-<% layout("/layouts/boilerplate") %>
-  
-    <div class="row mt-3">
-        <h1 class="col-6 offset-3 notes-head">Signup</h1>
-        <div class="col-6 offset-3 notes-form">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins&family=Tilt+Neon&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="/css/login.css">
+<link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include("../includes/flash.ejs") %>
+    <div id="login">
+        <div class="login-detail">
+        <h1 class="notes-head">Signup</h1>
+        </div>
+        <div class="notes-form">
             <form action="/signup" method="POST" class="needs-validation" novalidate>
-                <div class="mb-3">
-                    <label for="username" class="form-label">username</label>
+                <div class="data">
+                    <label for="username" class="form-label">Username</label>
                     <input name="username" id="username" type="text" class="form-control" required />
-                    <div class="valid-feedback">Looks good</div>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">email</label>
+                <div class="data">
+                    <label for="email" class="form-label">Email</label><br>
                     <input name="email" id="email" type="email" class="form-control" required />
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">password</label>
+                <div class="data">
+                    <label for="password" class="form-label">Password</label>
                     <input name="password" id="password" type="password" class="form-control" required />
                 </div>
-                <button class="btn btn-success">Signup</button>
-                <p class="notes-details">Already have an account?<a href="/login">Login</a></p>
+                <button class="btn">Signup</button>
+                <p class="details">Already have an account?<a href="/login"> Login</a></p>
             </form>
 
         </div>
 
 
     </div> 
+</body>
+</html>
+
+
+
+
+
+
+
+
