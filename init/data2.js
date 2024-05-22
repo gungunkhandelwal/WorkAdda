@@ -2,7 +2,7 @@ const sampleData2=[
 
 {
     title:"Linear Programming Notes" ,
-    description:"linear programming, mathematical modeling technique in which a linear function is maximized or minimized when subjected to various constraints. This technique has been useful for guiding quantitative decisions in business planning, in industrial engineering, and—to a lesser extent—in the social and physical sciences.",
+    description:"Linear programming, mathematical modeling technique in which a linear function is maximized or minimized when subjected to various constraints. This technique has been useful for guiding quantitative decisions in business planning, in industrial engineering, and—to a lesser extent—in the social and physical sciences.",
      image:{
          url:"https://media.geeksforgeeks.org/wp-content/uploads/20230609122206/LPP-Problem.png"
      },
