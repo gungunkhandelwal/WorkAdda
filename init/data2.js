@@ -7,7 +7,7 @@ const sampleData2=[
          url:"https://media.geeksforgeeks.org/wp-content/uploads/20230609122206/LPP-Problem.png"
      },
      pdf:{
-         link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+         link:"https://drive.google.com/file/d/1ZWyTh0dRQ_WT_ms1DB5HQDqDyzWa3ja3/view?usp=sharing"
      }
  },
 {
@@ -17,7 +17,7 @@ const sampleData2=[
          url:"https://images.unsplash.com/photo-1565292793248-f5c13612c48e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
      },
      pdf:{
-         link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+         link:"https://drive.google.com/file/d/1Yw1_ZlxtuQQxY5D52rFwo2XW3Y0CbZ09/view?usp=sharing"
      }
  },
  
@@ -28,7 +28,7 @@ const sampleData2=[
          url:"https://media.geeksforgeeks.org/wp-content/uploads/20230406152358/CN-(1).jpg"
      },
      pdf:{
-         link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+         link:"https://docs.google.com/document/d/17et94nPj2AeyhNpZCaGOUP2cNV6Upg8I/edit?usp=sharing&ouid=108329971292818725161&rtpof=true&sd=true"
      }
  },
  
@@ -39,7 +39,7 @@ const sampleData2=[
          url:"https://media.geeksforgeeks.org/wp-content/uploads/20240502185604/Matrix-in-Maths.webp"
      },
      pdf:{
-         link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+         link:"https://drive.google.com/file/d/1ZSrhsp6xJ7aN5G4QRCT9bmhS2TYtkfpq/view?usp=sharing"
      }
  },
  
