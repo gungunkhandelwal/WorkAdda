@@ -1,19 +1,18 @@
 <% layout("/layouts/boilerplate") %> 
-    
-<div class="notes-data">
-<h1>Subject Notes</h1>
-<div class="row  row-cols-lg-3  row-cols-md-2 row-cols-sm-1 mt-3">
-<% for(let note of allNotes) { %>
-    <div class="card col note-card">
-        <img src="<%= note.image.url %>" class="card-img-top note-card-img" alt="Note_image">
-    <div class="card-body">
-    <h5 class="card-title"><%= note.title %></h5>
-	<hr>
-    <p class="card-text"><%= note.description %></p>
-    
-    <a href="/Subject/<%=note._id %>" class="card-link">Read More</a>
-    </div>
-</div>
-<% } %>
 
+<h1 class="pro-head">Subject Notes</h1>
+
+<div class="note-data">
+<% for(let note of allNotes) { %>
+    <div class="note-card">
+        <img src="<%= note.image.url %>" class="note-img">
+        <div class="note-body">
+            <h1 class="note-title"><%= note.title %></h1>
+            <p class="note-info"><%= note.description %></p>
+    
+            <button class="note-btn"><a href="/Subject/<%=note._id %>">Read More</a></button>
+        </div>
+    
+    </div>
+<% } %>
 </div>

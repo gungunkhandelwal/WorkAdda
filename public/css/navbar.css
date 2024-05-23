@@ -1,13 +1,124 @@
-.note-card{
-    margin-right: 20px;
-    margin-top: 20px;
-    width: 55vh;
-    border: 2px solid black;
-    box-shadow: 3px 3px 2px black;
+/* NavBar CSS */
+
+nav{
+    background-color: #111; 
+    color: #FFFFF7;
+    height: 13vh;
 }
-.note-card-img{
-    height: 26vh;
-    width: 30vh;
-    margin-left: 15%;
-    margin-top: 5px;
+
+body .nav-head{
+    text-decoration: none;
+    color: #FFFFF7;
+}
+
+body .dropdown-menu{
+    background-color: #111;
+}
+
+body .nav-head:hover{
+    opacity: 0.8;
+    color: #FFFFF7;
+}
+
+/* Program and Subject index.ejs */
+
+.pro-head{
+    font-weight:bolder;
+    margin-top: 2vw;
+    text-transform:uppercase;
+}
+.note-data{
+    display: flex;
+    flex-wrap: wrap;
+}
+.note-card{
+    width: 25vw;
+    height: 75vh;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid #111;
+    position: relative;
+    margin: 3vw 2vw;
+}
+
+.note-img{
+    width: 80%;
+    height: 90%;
+    background-size: cover;
+    border-radius: 15px;
+    margin-left: 10%;
+    margin-top: 4vh;
+}
+
+.note-body{
+    width: 100%;
+    height: 100%;
+    top:0;
+    right:-300px;
+    position: absolute;
+    background-color: #1f3d4738;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    color: #111;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 2s;
+
+}
+.note-card:hover .note-body{
+    right: 0;
+}
+
+
+.note-title{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 500px;
+}
+
+.note-info{
+    font-size: 16px;
+    line-height: 15px;
+    margin: 20px 0;
+    font-weight: 300;
+}
+
+.note-btn{
+    background-color: #03c04a;
+    color: #FFFFF7;
+    width: 120px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+.note-btn a{
+    text-decoration: none;
+    color: #FFFFF7;
+}
+
+.note-btn :hover{
+    opacity: 0.9;
+}
+
+
+@media (max-width:800px){
+    .note-card{
+        margin-left: 0;
+    }
+}
+
+/* Program And Subject show.ejs */
+.sub-data{
+    margin-left: -30vw;
+    margin-top: 2vw; 
+}
+
+.show-img{
+    width: 100%;
+    height: 70vh;
 }
