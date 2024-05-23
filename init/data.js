@@ -6,7 +6,7 @@ const sampleData=[
             url:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png"
         },
         pdf:{
-            link: "https://drive.google.com/file/d/1A18tqTkbD80SnfEArm633iEsqP_FPhUK/view?usp=sharing"
+            link: "https://drive.google.com/file/d/1Y1i4u3QSihD3L6QCj22nMuo1u5Y_v1G6/view?usp=sharing"
         }
     },
     {
@@ -36,7 +36,7 @@ const sampleData=[
             url:"https://www.webfx.com/wp-content/uploads/2022/08/github-logo.png"
         },
         pdf:{
-            link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+            link:"https://drive.google.com/file/d/1YP_csFWoqeOr8wvsyl0-GKXgK3DTqhpq/view?usp=sharing"
         }
     },
     {
@@ -46,7 +46,7 @@ const sampleData=[
             url:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png"
         },
         pdf:{
-            link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+            link:"https://drive.google.com/file/d/1YQFKXJ2yVYiBf2nwhCfdn4GlE85cueGT/view?usp=sharing"
         }
     },
     {
@@ -56,7 +56,7 @@ const sampleData=[
             url:"https://miro.medium.com/v2/resize:fit:792/1*lJ32Bl-lHWmNMUSiSq17gQ.png"
         },
         pdf:{
-            link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+            link:"https://drive.google.com/file/d/1Ye0nejplFnKq4qCqNIXLT7AszwgO7F6-/view?usp=sharing"
         }
     },
     {
@@ -66,7 +66,7 @@ const sampleData=[
             url:"https://www.w3schools.com/whatis/img_js.png"
         },
         pdf:{
-            link:"https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/C_Complete_Notes.pdf"
+            link:"https://drive.google.com/file/d/1Ylm5FacJutAFi-N-EG1BF8olGCDH729_/view?usp=sharing"
         }
     },
     
