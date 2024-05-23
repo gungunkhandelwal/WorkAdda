@@ -32,13 +32,13 @@ body .nav-head:hover{
     flex-wrap: wrap;
 }
 .note-card{
-    width: 25vw;
-    height: 75vh;
+    width: 20vw;
+    height: 60vh;
     border-radius: 20px;
     overflow: hidden;
     border: 3px solid #111;
     position: relative;
-    margin: 3vw 2vw;
+    margin: 3vw 6vw 7vw 2vw;
 }
 
 .note-img{
