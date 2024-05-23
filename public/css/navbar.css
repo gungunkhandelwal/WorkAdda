@@ -59,7 +59,7 @@ body .nav-head:hover{
     background-color: #1f3d4738;
     backdrop-filter: blur(5px);
     border-radius: 15px;
-    color: #111;
+    color: #FFFFF7;
     padding: 30px;
     display: flex;
     flex-direction: column;
