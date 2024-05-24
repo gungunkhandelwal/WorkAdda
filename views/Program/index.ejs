@@ -8,11 +8,11 @@
         <img src="<%= note.image.url %>" class="note-img">
         <div class="note-body">
             <h1 class="note-title"><%= note.title %></h1>
+
             <p class="note-info"><%= note.description.substring(0,100) %>... %></p>
-    
             <button class="note-btn"><a href="/Program/<%=note._id %>">Read More</a></button>
         </div>
     
     </div>
 <% } %>
-</div>
+
