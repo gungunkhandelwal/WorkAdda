@@ -42,6 +42,26 @@ const sampleData2=[
          link:"https://drive.google.com/file/d/1ZSrhsp6xJ7aN5G4QRCT9bmhS2TYtkfpq/view?usp=sharing"
      }
  },
+{
+    title:"DataBase Management System" ,
+    description:"Database Management Systems (DBMS) are software systems used to store, retrieve, and run queries on data. A DBMS serves as an interface between an end-user and a database, allowing users to create, read, update, and delete data in the database.",
+     image:{
+         url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75bxdJYqvbsdV3SMliqRXu9l_KceTv9_Vq7l5l8KzJA&s"
+     },
+     pdf:{
+         link:"https://docs.google.com/document/d/12mAjN_bBokFifY0TZ9gRcZlXpLCJBPFs/edit?usp=sharing&ouid=112659317761862813248&rtpof=true&sd=true"
+     }
+ },
+{
+    title:"Operating System" ,
+    description:"An operating system is the most important software that runs on a computer. It manages the computer's memory and processes, as well as all of its software and hardware. It also allows you to communicate with the computer without knowing how to speak the computer's language.",
+     image:{
+         url:"https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2NvbXB1dGVyLW9wZXJhdGluZy1zeXRlbS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOiIxMjAwIn19fQ=="
+     },
+     pdf:{
+         link:"https://drive.google.com/file/d/1WbQpkLmZ8_3Xs6wEfN3n5n4EGPPqTB28/view?usp=sharing"
+     }
+ },
  
 
 

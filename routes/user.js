@@ -34,7 +34,7 @@ router.get("/login",(req,res)=>{
 });
 
 router.post("/login",saveRedirectUrl,passport.authenticate("local",{failureRedirect :"/login",failureFlash:true}),async(req,res)=>{
-    req.flash("success","welcome to NoteAdda! you are logged in!");
+    req.flash("success","Welcome To NoteAdda! You Are Logged In!");
     let redirectUrl =res.locals.redirectUrl || "/Notes";
     res.redirect(redirectUrl);
 
