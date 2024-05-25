@@ -26,7 +26,7 @@ const sampleData=[
             url:"https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fd0hst9r97gq50860kpq0.png"
         },
         pdf:{
-            link:"https://drive.google.com/file/d/1A18tqTkbD80SnfEArm633iEsqP_FPhUK/view?usp=sharing"
+            link:"https://drive.google.com/file/d/1kb6JQKxN9Uy3vGVLLJSMMP8vn4go2Bwq/view?usp=sharing"
         }
     },
     {
