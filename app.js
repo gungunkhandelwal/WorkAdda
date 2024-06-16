@@ -5,6 +5,7 @@ const User =require("./models/user.js");
 const passport =require("passport");
 const LocalStrategy =require("passport-local");
 const session =require("express-session");
+const MongoStore =require("connect-mongo");
 const ejsMate = require("ejs-mate");
 const user= require("./routes/user.js");
 const flash =require("connect-flash");
@@ -19,17 +20,6 @@ const SubjectRouter=require("./routes/Subject.js");
 
 const mongoose =require("mongoose");
 
-
-main().then((res)=>{
-    console.log("successfull");
-})
-.catch(err =>console.log(err));
-
-async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/NotesAdda');
-}
-
-
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "/public")));
@@ -38,6 +28,31 @@ app.engine("ejs", ejsMate);
 
 
 
+
+const dbUrl ="mongodb+srv://gumo:0115072003@cluster0.dxvnsmx.mongodb.net/";
+
+
+main().then((res)=>{
+    console.log("successfull");
+})
+.catch(err =>console.log(err));
+
+async function main() {
+  await mongoose.connect(dbUrl);
+}
+
+const store= MongoStore.create({
+    mongoUrl:dbUrl,
+    crypto:{
+        secret:process.env.SECRET
+    },
+    touchAfter:24 * 3600,
+});
+
+
+store.on("error",()=>{
+    console.log("ERROR in MONGO SESSION STORE",err);
+})
 const sessionOptions ={
     secret:"OurFirstProject",
     resave:false,
@@ -52,8 +67,10 @@ const sessionOptions ={
 
 
 
-app.use(session(sessionOptions));
+
+ app.use(session(sessionOptions));
 app.use(flash());
+
 
 
 app.use(passport.initialize());
