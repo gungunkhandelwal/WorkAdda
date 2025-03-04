@@ -1,126 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NotesAdda</title>
-    <link
-      rel="icon"
-      href="https://static.vecteezy.com/system/resources/previews/029/722/382/original/notes-icon-in-trendy-flat-style-isolated-on-white-background-notes-silhouette-symbol-for-your-website-design-logo-app-ui-illustration-eps10-free-vector.jpg"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins&family=Tilt+Neon&family=Ubuntu:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/css/navbar.css" />
-    <link rel="stylesheet" href="/css/index.css" />
-  </head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand nav-head" href="/Notes">
-          <img
-            src="data:image/png;base64,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
-                VJgQMp/o+vyQdbUSTv896tK+B5han3/MvAcrmazkBM1Z27V7dzhKztI7GboLq8m8p08SeX4xpFV0g/C+ACUGn
-                f9fy7Wz6fhFBEARBEARBEARBEARBEARBEAT5M/wHROJsr4OQ/
-                tkAAAAASUVORK5CYII="
-            style="
-              width: 50px;
-              height: 50px;
-              border-radius: 50%;
-              margin-right: 1vw;
-            "
-          />NotesAdda</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a
-                class="nav-link active nav-head"
-                aria-current="page"
-                href="/Notes"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active nav-head"
-                aria-current="page"
-                href="/Notes"
-                >Add Notes</a
-              >
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle nav-head"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Category
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item nav-head" href="/Program"
-                    >Programming languages</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item nav-head" href="/Subject"
-                    >Btech Notes</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <div class="d-flex">
-            <ul class="navbar-nav">
-              <% if (currUser) { %> <% if (currUser.role === "noteprovider") {
-              %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotesAdda</title>
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/029/722/382/original/notes-icon-in-trendy-flat-style-isolated-on-white-background-notes-silhouette-symbol-for-your-website-design-logo-app-ui-illustration-eps10-free-vector.jpg">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins&family=Tilt+Neon&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+      <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="/Notes">
+            <img src="data:image/png;base64,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" 
+                 alt="NotesAdda Logo"
+                 class="me-2" 
+                 style="width: 40px; height: 40px; border-radius: 50%;">
+            <span class="fw-bold">NotesAdda</span>
+          </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="/Program/new"
-                  >Create Program Notes
-                </a>
-                <a class="nav-link" href="/Student/new"
-                  >Create Student Notes
+                <a class="nav-link" aria-current="page" href="/Notes">
+                  <i class="fas fa-home me-1"></i> Home
                 </a>
               </li>
-              <% } %>
-              <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-folder-open me-1"></i> Categories
+                </a>
+                <ul class="dropdown-menu dropdown-menu-animated">
+                  <li>
+                    <a class="dropdown-item" href="/Program">
+                      <i class="fas fa-code me-2"></i> Programming Languages
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <a class="dropdown-item" href="/Subject">
+                      <i class="fas fa-book me-2"></i> BTech Notes
+                    </a>
+                  </li>
+                </ul>
               </li>
-              <% } else { %>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/signup">Signup</a>
-              </li>
-              <% } %>
             </ul>
+            
+            <div class="d-flex align-items-center">              
+              <ul class="navbar-nav">
+                <% if(!currUser) { %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">
+                    <i class="fas fa-sign-in-alt me-1"></i> Login
+                  </a>
+                </li>
+                <li class="nav-item" style="margin-top: 8px;">
+                  <a class="btn btn-light btn-sm rounded-pill px-3 ms-2 d-none d-lg-inline" href="/signup">
+                    Sign Up
+                  </a>
+                </li>
+                <% } %>
+                <% if(currUser) { %>
+                    <li  class="nav-item">
+                      <a class="nav-link" href="/logout">
+                        <i class="fas fa-sign-out-alt me-2"></i> Logout
+                      </a>
+                    </li>
+                <% } %>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </body>
+      </nav>
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
 </html>

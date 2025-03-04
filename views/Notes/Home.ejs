@@ -1,174 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NotesAdda</title>
-    <link
-      rel="icon"
-      href="https://static.vecteezy.com/system/resources/previews/029/722/382/original/notes-icon-in-trendy-flat-style-isolated-on-white-background-notes-silhouette-symbol-for-your-website-design-logo-app-ui-illustration-eps10-free-vector.jpg"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins&family=Tilt+Neon&family=Ubuntu:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/index.css" />
-  </head>
-
-  <body>
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/index.css">
+<body>
     <div id="main">
-      <div id="page1">
-        <!-- Navbar -->
-        <nav>
-          <h2>NotesAdda</h2>
-          <div id="nav-part2">
-            <% if (!currUser) { %>
-            <h4><a href="/login">Login</a></h4>
-            <h4><a href="/signup">Signup</a></h4>
-            <% } else { %>
-            <h4><a href="/logout">Logout</a></h4>
-            <% } %>
-          </div>
-        </nav>
-
-        <!-- Hero Page -->
-        <div id="center">
-          <div id="left">
-            <h3>
-              Explore our website to find a variety of notes, from study guides
-              to inspirational quotes, designed to suit every need and interest.
-            </h3>
-            <a href="/Program" class="btn btn-success" role="button"
-              >Let's Start</a
-            >
-          </div>
-          <div id="right">
-            <h2>
-              UNLOCK YOUR <br />
-              POTENTIAL WITH <br />
-              EVERY NOTE !
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      <!-- Page 2 -->
-      <div id="page2">
-        <div class="imageSlider"></div>
-        <div id="moving-text">
-          <% for (let i = 0; i < 3; i++) { %>
-          <div class="con">
-            <h1>LEARN</h1>
-            <div id="gola"></div>
-            <h1>REPEAT</h1>
-            <div id="gola"></div>
-            <h1>PRACTICE</h1>
-            <div id="gola"></div>
-          </div>
-          <% } %>
-        </div>
-      </div>
-
-      <!-- Page 3 -->
-      <div id="page3">
-        <div id="aboutus">
-          <h1>ABOUT US</h1>
-          <p class="about">
-            Welcome to NotesAdda! Here, you can easily access a wide variety of
-            programming and engineering notes. Our valuable content is designed
-            to help you learn new skills and succeed in your university exams.
-            Explore, learn, and excel with NotesAdda.
-          </p>
-        </div>
-        <div id="team">
-          <h3>MEET THE TEAM</h3>
-          <div class="card-wrapper">
-            <div class="member_card">
-              <img src="./assets/photo_2024-06-10_16-39-11.jpg" class="ms-5" />
-              <h4>Gungun Khandelwal</h4>
-              <h5>Frontend Developer</h5>
-              <p class="quotes">
-                "Learning is a treasure that will follow its owner everywhere."
-              </p>
+        <div id="page1">
+            <!-- Hero Page -->
+            <div id="center">
+                <div id="left">
+                    <h3>Explore our website to find a varietes of notes,
+                        from study guides to inspirational quotes,
+                        designed to suit every need and interest.</h3>
+                    <a href="/Program" class="btn btn-success" role="button">Let's Start</a>
+                </div>
+                <div id="right">
+                    <h2>UNLOCK
+                        YOUR <br>
+                        POTENTIAL WITH <br>
+                        EVERY NOTES!</h2>
+                </div>
             </div>
-            <div class="member_card">
-              <img src="./assets/photo2.jpg" class="ms-5" />
-              <h4>Mohit Sharma</h4>
-              <h5>Backend Developer</h5>
-              <p class="quotes">
-                "Learn as much as you can while you are young, since life
-                becomes too busy later."
-              </p>
+        </div>
+        <div id="page2">
+            <div id="category-cards">
+                <div class="container">
+                    <h2 class="section-title">EXPLORE BY CATEGORY</h2>
+                    <div class="cards-wrapper">
+                        <div class="category-card">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3>Programming Notes</h3>
+                            <p>Access comprehensive guides for Java, Python, C++, JavaScript and more programming languages.</p>
+                            <a href="/Program" class="card-btn">Explore Programming</a>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3>Engineering Notes</h3>
+                            <p>Find detailed study materials for various engineering disciplines and university courses.</p>
+                            <a href="/Subject" class="card-btn">Explore Engineering</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div id="footer">
-        <div id="wrapper">
-          <div class="contact">
-            <h5>Get Connected with Us!</h5>
-            <form>
-              <label for="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your Email"
-                class="email_field"
-              />
-              <button type="submit" class="btn btn-success">Submit</button>
-            </form>
-          </div>
-          <div class="social">
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/gungunkhandelwal/"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <div class="details">
-              <p>Email: Notesadda@gmail.com</p>
-              <p>Phone-No : +91-8287634509</p>
+            <!-- Moving Text Section -->
+            <div id="moving-text">
+                <div class="con">
+                    <h1>LEARN</h1>
+                    <div id="gola"></div>
+                    <h1>REPEAT</h1>
+                    <div id="gola"></div>
+                    <h1>PRACTICE</h1>
+                    <div id="gola"></div>
+                </div>
+                <div class="con">
+                    <h1>LEARN</h1>
+                    <div id="gola"></div>
+                    <h1>REPEAT</h1>
+                    <div id="gola"></div>
+                    <h1>PRACTICE</h1>
+                    <div id="gola"></div>
+                </div>
             </div>
-          </div>
         </div>
-        <div id="something">
-          <div class="title">
-            <h3>NOTESADDA</h3>
-            <p>Copyright &#64; 2024</p>
-          </div>
-          <div class="security">
-            <span>
-              <a href="#">Copyright</a> | <a href="#">Privacy</a> |
-              <a href="#">Security</a>
-            </span>
-          </div>
+        <div id="page3">
+            <div id="aboutus">
+                <h1>ABOUT US</h1>
+                <p class="about">Welcome to NotesAdda! Here, you can easily access a wide variety of programming and
+                    engineering notes. Our valuable content is designed to help you learn new skills and succeed in your university exams.
+                    Explore, learn, and excel with NotesAdda.</p>
+            </div>
+            <div id="team">
+                <h3>MEET THE TEAM</h3>
+                <div class="card-wrapper">
+                    <div class="member_card">
+                        <img src="./assets/photo_2024-06-10_16-39-11.jpg" alt="Gungun Khandelwal">
+                        <h4>Gungun Khandelwal</h4>
+                        <h5>Frontend Developer</h5>
+                        <p class="quotes">"Learning is a treasure that will follow its owner everywhere."</p>
+                    </div>
+                    <div class="member_card">
+                        <img src="./assets/photo2.jpg" alt="Mohit Sharma">
+                        <h4>Mohit Sharma</h4>
+                        <h5>Backend Developer</h5>
+                        <p class="quotes">"Learn as much as you can while you are young, since life becomes too busy later."</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <div id="footer">
+            <div id="wrapper">
+                <div class="contact">
+                    <h5>Get Connected with Us!</h5>
+                    <form>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="Enter your Email" class="email_field">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+                <div class="social">
+                    <div style="display: flex;">
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/gungunkhandelwal/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <div class="details">
+                        <p>Email: Notesadda@gmail.com</p>
+                        <p>Phone: +91-8287634509</p>
+                    </div>
+                </div>
+            </div>
+            <div id="something">
+                <div class="title">
+                    <h3>NOTESADDA</h3>
+                    <p>Copyright &#64; 2024</p>
+                </div>
+                <div class="security">
+                    <span>
+                        <a href="">Copyright</a>|<a href="">Privacy</a>|<a href="">Security</a>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Closing #main -->
-
-    <!-- Bootstrap Script -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
