@@ -1,0 +1,58 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Edit Notes</h3>
+    <form
+      method="POST"
+      action="/Program/<%= program._id %>?_method=PUT"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          name="Program[title]"
+          value="<%= program.title %>"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Title looks good</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="Program[description]" class="form-control" required>
+<%= program.description %></textarea
+        >
+        <div class="invalid-feedback">Description should be valid</div>
+      </div>
+
+      <div class="mb-3">
+        Original Program Notes Image <br />
+        <img src="<%= originalImageUrl %>" height="150px" width="auto" />
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload New Image</label>
+        <input name="Program[image]" type="file" class="form-control" />
+      </div>
+
+      <div class="mb-3">
+        <label for="pdf" class="form-label">Drive Link</label>
+        <input
+          id="drive-link"
+          type="text"
+          name="Program[link]"
+          value="<%= program.pdf.link %>"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <button class="btn btn-dark edit-btn mb-3">Edit</button>
+    </form>
+  </div>
+</div>

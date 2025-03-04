@@ -1,25 +1,31 @@
-<% layout("/layouts/boilerplate") %> 
+<% layout("/layouts/boilerplate") %>
 
-
-</ul>
 <div class="sub-data">
-    <div class="cols-8 offset-3 ">
-        <h3 style="font-weight: 600;">
-            <%= note.title %>
-        </h3>
+  <div class="cols-8 offset-3">
+    <h3 style="font-weight: 600"><%= note.title %></h3>
+  </div>
+  <div class="cards col-6 offset-3 show-card Note-card">
+    <img
+      src="<%= note.image.url %>"
+      class="card-img-top show-img"
+      alt="Note_image"
+    />
+    <div class="card-body">
+      <p class="card-text"><%= note.description %></p>
+      <p class="card-text">
+        <a href="<%= note.pdf.link %>">Click here for notes</a>
+      </p>
     </div>
-    <div class="cards col-6 offset-3 show-card Note-card">
-        <img src="<%= note.image.url %>" class="card-img-top show-img" alt="Note_image">
-        <div class="card-body">
-            <p class="card-text">
-                <%= note.description %>
-            </p>
-            <p class="card-text">
-               <a href="<%= note.pdf.link %>">Click here for notes</a>
-            </p>
-            
-        </div>
+    <div class="btns">
+      <a
+        href="/Program/<%= note._id  %>/edit"
+        class="btn btn-dark col-1 offset-3 edit-btn"
+        >Edit</a
+      >
+
+      <form method="POST" action="/Program/<%= note._id %>?_method=DELETE">
+        <button class="btn btn-dark offset-5">Delete</button>
+      </form>
     </div>
-
-
-    
+  </div>
+</div>

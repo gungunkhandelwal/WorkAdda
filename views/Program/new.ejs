@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Post</title>
+  </head>
+  <body>
+    <div class="row mt-3">
+      <div class="col-8 offset-2">
+        <h3>Create a New Notes</h3>
+        <form
+          method="POST"
+          action="/Program"
+          novalidate
+          class="needs-validation"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input
+              name="Program[title]"
+              placeholder="enter title"
+              type="text"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="valid-feedback">Title looks good</div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="Program[description]" class="form-control" required>
+            </textarea>
+            <div class="invalid-feedback">decription should be valid</div>
+          </div>
+
+          <div class="mb-2">
+            <label for="image" class="form-lable">Uplode File</label>
+            <input
+              type="file"
+              name="Program[image]"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-2">
+            <label for="image" class="form-lable">Provide Drive Link</label>
+            <input
+              id="drive-link"
+              type="text"
+              name="Program[link]"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Drive Should Be Access for All</div>
+          </div>
+
+          <button class="btn btn-dark add-btn mb-3">Add</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

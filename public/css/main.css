@@ -115,7 +115,7 @@ nav {
     margin-left: 8%;
     box-shadow: rgba(149, 157, 165, 0.2) 8px 10px 24px;
     border-radius: 10px;
-    animation: changeImage 20s linear infinite;
+    animation: changeImage 5s linear infinite;
 }
 
 @keyframes changeImage {
