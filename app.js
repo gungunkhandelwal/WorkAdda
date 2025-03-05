@@ -9,17 +9,22 @@ const LocalStrategy = require("passport-local");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const ejsMate = require("ejs-mate");
-const user = require("./routes/user.js");
-const flash = require("connect-flash");
+const user= require("./routes/user.js");
+const flash =require("connect-flash");
+const List =require("./models/List.js")
 
-const List = require("./models/List.js");
-const Program = require("./models/Program.js");
-const NoteRouter = require("./routes/List.js");
-const ProgramRouter = require("./routes/Program.js");
-const methodOverride = require("method-override");
-const SubjectRouter = require("./routes/Subject.js");
+const mongoose =require("mongoose");
 
-const mongoose = require("mongoose");
+
+main().then((res)=>{
+    console.log("successfull");
+})
+.catch(err =>console.log(err));
+
+async function main() {
+  await mongoose.connect('mongodb://127.0.0.1:27017/NotesAdda');
+}
+
 
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
@@ -81,13 +86,24 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/Notes", NoteRouter);
-app.use("/Program", ProgramRouter);
 
-app.use("/Subject", SubjectRouter);
 
-app.use("/", user);
+app.use("/",user);
 
-app.listen(8080, () => {
-  console.log("listening is 8080");
+//index route
+app.get("/Notes",async(req,res)=>{
+    const allNotes= await List.find({});
+    res.render("Notes/index.ejs",{allNotes});
 });
+
+//show route
+app.get("/Notes/:id",async(req,res)=>{
+    let { id } =req.params;
+    const note =await List.findById(id);
+    res.render("Notes/show.ejs",{note});
+})
+
+
+app.listen(8080,()=>{
+    console.log("listening is 8080");
+})
