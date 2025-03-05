@@ -1,131 +1,202 @@
-<% layout('layouts/boilerplate') %>
-<link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/css/index.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NotesAdda</title>
+  <link rel="icon"
+    href="https://static.vecteezy.com/system/resources/previews/029/722/382/original/notes-icon-in-trendy-flat-style-isolated-on-white-background-notes-silhouette-symbol-for-your-website-design-logo-app-ui-illustration-eps10-free-vector.jpg" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins&family=Tilt+Neon&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
 <body>
-    <div id="main">
-        <div id="page1">
-            <!-- Hero Page -->
-            <div id="center">
-                <div id="left">
-                    <h3>Explore our website to find a varietes of notes,
-                        from study guides to inspirational quotes,
-                        designed to suit every need and interest.</h3>
-                    <a href="/Program" class="btn btn-success" role="button">Let's Start</a>
-                </div>
-                <div id="right">
-                    <h2>UNLOCK
-                        YOUR <br>
-                        POTENTIAL WITH <br>
-                        EVERY NOTES!</h2>
-                </div>
+  <div id="main">
+    <div id="page1">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-head" href="/Notes" style="color:#ecf0f1 ;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAY1BMVEX///8AAADl5eXCwsLIyMjy8vLc3NyDg4MfHx84ODiGhobNzc0QEBCVlZXt7e1dXV0nJyfW1tZOTk6mpqb5+fksLCxlZWW4uLixsbEzMzNzc3OcnJxtbW0JCQl6enoYGBhGRkYlnLa2AAAGv0lEQVR4nO2d63azKhCGq8ZjPGs8xMTk/q9yJxEEBfyi28Gurnl+tVKVV2BmwJH+/CAIgiAIgiAIgiAIgiAIgiAIgiDIkcS2oqCMVafYqlMO5hzc+kZWN7vub+5ZdkocXftOKfRATrlhGI+uFArKwnuV+CfxlPJ9inH9fWrs27tisjpnl0/JUzyn+xQYDXjl1mLmQ80KoeQ0FIRiD2yHkkhH/b6jdOoocINbOtQsd+dUQ8G9nxdE96HEf/0cFCdT7KF6hZhNYuyGd7OOGz5lFtz3k/LhUpjHaDE7b2cpb/xDWsfasYNNcB3tWpoUSIthJJlmLQWYlBe5XjXNg7/5vfX9Szj87PlzaBO2QgkxH4/36VM1Os3AyWc3fhaZGcfx6Tn8GsVzmqEgzOYFJXki/ft88xRw9qTSZwXMikk5E1cXDxFAKMYmFvlTMQIgJiQil7CLcLyuJMYDIhrvWcwPVmIHMYeoTRK0OMNF2Aix8/HKujramfQoI635w66fXqSGyKkuaXuVXalpLxff4o/0VEyyY4UXKGnDpLMu5dRn+VSrPNcK3xFb1uyUsQfrsWgO6QshSLRb0maXNuXu0AGdwFicM20aHSbAJr0sFGcuu1DSYWP9+2//NyYxqC3UUgSZzBkB0PV5HOLRK6gbmGTU5FA34MjIgwObucekn100DBoqRrp2tAclWedINSypUWsDNusoC31iTihmBShmIyhmDShmIyhmDX9KzE+jX0xhQeHqFwMOikExKAbFoJi1Yk6xCUSkX8yfigAwNvsGFLMRFLMGFLMRFLOKPyXmPOQH6HilAS+m/GTVeTpeni+JKe21SG9RNlVy1ZLbtCAmK9xgJc2xqbNqMdmWrK3rQal/A2ox+WKtVQC9tP4OpRgnXKy0iv7IjqYUk20Tc2jCubqbbUul7Q7QMLJgALZoSRQm2D51rhvVwOZhwTSbycNbxyWSepqyYVmB8r+AF7MTZd1OOyKcHHAxZjDvijnYvaDFkCzICT5UOgiwGJkWuExnWDGxIikfyBuBiokrTkDK2QGgVD1IMVzCtFE4pulYNGMTyAgAiuHaJSHe0nbpkXr53G3AieHahUufv5JDIAEpmBhOy42reExGjg/Rz6DEcDZ5OmGjPhTCOgOJcUYtj34aXdLUQwjHuSTGOX+HI+SScu3SzhKanWPEdInwvY+cpJuF9rxNvt+ml4bMcFWLWfPpVjCJhGd+v5pcuztizNhrFmda/jnz7fIh4RuOrJN4Wq3ZujUALsdb0PLy98w208+dJJ8ZAYox14gJ2SiPRS0vNbQbWjRAKyAS0NVjZs1XqLfxOZvstCv3M0mer+lngi3IlGbBmrVp+B1eMlaN62PvMJ8tJKYlrwVoKWDJz9TRd7DdKZivvA9+n6l5xpwWoNnZrhGAoOWn5CLnevwcNAWJmfcVw/cxOojiqyHwABn9P7uKkWl5He0FMVBadhTD2S4+5hfVNGCfBe0mhtMy+5R51tMAdz/ZS4xayysy4tVAvsDZScySFt6/wL6M2kcM7/cXtcDusLOLGEdqxyhs4TwEs2MDe4gRfSWPNfpKD1jLHmIc1drFh1qflh3EyH0lhWkB8/uMBTFlowgsi4lPTJa0NJwdg/+EVi3GTlRbBHncPFjl9wdqdgkdO4WpxchmjJSEPuX4V/gXilJMvDhtpk3DfLtMC3uJoSdxY+OCBplaskd/E6eO2nzliFJMubjURKo+BsRH+n2Gesx0cwEcZPMQsnOgEcps8qgF3r9QFkxzlORyErrpT0am+JJFMDZe9GlZdJpxJmesOt3kSUyYOUTL+IZh03JJMSQLecKY0BdbTqCL8pvWS8iwes5X9Gqtfp+RkY28tuzYU5K3YPP9y2pmCPXuEErDEX/LucSYVdOnr9vvM+jL7MeGfkaN2W1y9Dgtr3uTG2/ICLeGMPI+2eyn0RtbTqGP97E+IZF+TcY3KmsXya514Iz7m8l2LV6GvCj0R7Ne2sf4F8a4vWG+Ug0dbk/7LcPMzk3Xj1rSQ7SMBvZVq3ULp3Sl8mlaTRdUPr9/5THt8sP2nns9TndN45hEjJcIAfYdbj35X3BO7tkX2bcpOrE718Ds2IGbNUdcPbxnnizT06BUmSlw7M7g6mcsoyVqsqe8/OhdzoV83UV6MtGUNg3Mi+RVNGte+3t0WAX8WaF38ZN
+                          VJgQMp/o+vyQdbUSTv896tK+B5han3/MvAcrmazkBM1Z27V7dzhKztI7GboLq8m8p08SeX4xpFV0g/C+ACUGn
+                          f9fy7Wz6fhFBEARBEARBEARBEARBEARBEAT5M/wHROJsr4OQ/
+                          tkAAAAASUVORK5CYII=" style="
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        margin-right: 1vw;
+
+                      " />NotesAdda</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active nav-head" aria-current="page" href="/Notes">Home</a>
+              </li>
+            </ul>
+            </li>
+            </ul>
+            <div class="d-flex">
+              <ul class="navbar-nav">
+                <% if (currUser) { %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/logout">
+                      <i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+                  </li>
+                  <% } else { %>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/login">
+                        <i class="fas fa-sign-in-alt me-1"></i>Login</a>
+                    </li>
+                    <li class="nav-item" style="margin-top: 8px;">
+                      <a class="btn btn-light btn-sm rounded-pill px-3 ms-2 d-none d-lg-inline" href="/signup">
+                        Sign Up
+                      </a>
+                    </li>
+                    <% } %>
+              </ul>
             </div>
+          </div>
         </div>
-        <div id="page2">
-            <div id="category-cards">
-                <div class="container">
-                    <h2 class="section-title">EXPLORE BY CATEGORY</h2>
-                    <div class="cards-wrapper">
-                        <div class="category-card">
-                            <div class="card-icon">
-                                <i class="fa-solid fa-code"></i>
-                            </div>
-                            <h3>Programming Notes</h3>
-                            <p>Access comprehensive guides for Java, Python, C++, JavaScript and more programming languages.</p>
-                            <a href="/Program" class="card-btn">Explore Programming</a>
-                        </div>
-                        
-                        <div class="category-card">
-                            <div class="card-icon">
-                                <i class="fa-solid fa-microchip"></i>
-                            </div>
-                            <h3>Engineering Notes</h3>
-                            <p>Find detailed study materials for various engineering disciplines and university courses.</p>
-                            <a href="/Subject" class="card-btn">Explore Engineering</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Moving Text Section -->
-            <div id="moving-text">
-                <div class="con">
-                    <h1>LEARN</h1>
-                    <div id="gola"></div>
-                    <h1>REPEAT</h1>
-                    <div id="gola"></div>
-                    <h1>PRACTICE</h1>
-                    <div id="gola"></div>
-                </div>
-                <div class="con">
-                    <h1>LEARN</h1>
-                    <div id="gola"></div>
-                    <h1>REPEAT</h1>
-                    <div id="gola"></div>
-                    <h1>PRACTICE</h1>
-                    <div id="gola"></div>
-                </div>
-            </div>
+      </nav>
+      <!-- Hero Page -->
+      <div id="center">
+        <div id="left">
+          <h3>Explore our website to find a varietes of notes,
+            from study guides to inspirational quotes,
+            designed to suit every need and interest.</h3>
+          <a href="/Program" class="btn btn-success" role="button">Let's Start</a>
         </div>
-        <div id="page3">
-            <div id="aboutus">
-                <h1>ABOUT US</h1>
-                <p class="about">Welcome to NotesAdda! Here, you can easily access a wide variety of programming and
-                    engineering notes. Our valuable content is designed to help you learn new skills and succeed in your university exams.
-                    Explore, learn, and excel with NotesAdda.</p>
-            </div>
-            <div id="team">
-                <h3>MEET THE TEAM</h3>
-                <div class="card-wrapper">
-                    <div class="member_card">
-                        <img src="./assets/photo_2024-06-10_16-39-11.jpg" alt="Gungun Khandelwal">
-                        <h4>Gungun Khandelwal</h4>
-                        <h5>Frontend Developer</h5>
-                        <p class="quotes">"Learning is a treasure that will follow its owner everywhere."</p>
-                    </div>
-                    <div class="member_card">
-                        <img src="./assets/photo2.jpg" alt="Mohit Sharma">
-                        <h4>Mohit Sharma</h4>
-                        <h5>Backend Developer</h5>
-                        <p class="quotes">"Learn as much as you can while you are young, since life becomes too busy later."</p>
-                    </div>
-                </div>
-            </div>
+        <div id="right">
+          <h2>UNLOCK
+            YOUR <br>
+            POTENTIAL WITH <br>
+            EVERY NOTES!</h2>
         </div>
-        <div id="footer">
-            <div id="wrapper">
-                <div class="contact">
-                    <h5>Get Connected with Us!</h5>
-                    <form>
-                        <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="Enter your Email" class="email_field">
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </form>
-                </div>
-                <div class="social">
-                    <div style="display: flex;">
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/gungunkhandelwal/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                    <div class="details">
-                        <p>Email: Notesadda@gmail.com</p>
-                        <p>Phone: +91-8287634509</p>
-                    </div>
-                </div>
-            </div>
-            <div id="something">
-                <div class="title">
-                    <h3>NOTESADDA</h3>
-                    <p>Copyright &#64; 2024</p>
-                </div>
-                <div class="security">
-                    <span>
-                        <a href="">Copyright</a>|<a href="">Privacy</a>|<a href="">Security</a>
-                    </span>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <div id="page2">
+      <div id="category-cards">
+        <div class="container">
+          <h2 class="section-title">EXPLORE BY CATEGORY</h2>
+          <div class="cards-wrapper">
+            <div class="category-card">
+              <div class="card-icon">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3>Programming Notes</h3>
+              <p>Access comprehensive guides for Java, Python, C++, JavaScript and more programming languages.</p>
+              <a href="/Program" class="card-btn">Explore Programming</a>
+            </div>
+
+            <div class="category-card">
+              <div class="card-icon">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <h3>Engineering Notes</h3>
+              <p>Find detailed study materials for various engineering disciplines and university courses.</p>
+              <a href="/Subject" class="card-btn">Explore Engineering</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Moving Text Section -->
+      <div id="moving-text">
+        <div class="con">
+          <h1>LEARN</h1>
+          <div id="gola"></div>
+          <h1>REPEAT</h1>
+          <div id="gola"></div>
+          <h1>PRACTICE</h1>
+          <div id="gola"></div>
+        </div>
+        <div class="con">
+          <h1>LEARN</h1>
+          <div id="gola"></div>
+          <h1>REPEAT</h1>
+          <div id="gola"></div>
+          <h1>PRACTICE</h1>
+          <div id="gola"></div>
+        </div>
+      </div>
+    </div>
+    <div id="page3">
+      <div id="aboutus">
+        <h1>ABOUT US</h1>
+        <p class="about">Welcome to NotesAdda! Here, you can easily access a wide variety of programming and
+          engineering notes. Our valuable content is designed to help you learn new skills and succeed in your
+          university exams.
+          Explore, learn, and excel with NotesAdda.</p>
+      </div>
+      <div id="team">
+        <h3>MEET THE TEAM</h3>
+        <div class="card-wrapper">
+          <div class="member_card">
+            <img src="./assets/photo_2024-06-10_16-39-11.jpg" alt="Gungun Khandelwal">
+            <h4>Gungun Khandelwal</h4>
+            <h5>Frontend Developer</h5>
+            <p class="quotes">"Learning is a treasure that will follow its owner everywhere."</p>
+          </div>
+          <div class="member_card">
+            <img src="./assets/team.png" alt="Mohit Sharma">
+            <h4>Mohit Sharma</h4>
+            <h5>Backend Developer</h5>
+            <p class="quotes">"Learn as much as you can while you are young, since life becomes too busy later."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="wrapper">
+        <div class="contact">
+          <h5>Get Connected with Us!</h5>
+          <form>
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Enter your Email" class="email_field">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+        <div class="social">
+          <div style="display: flex;">
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/gungunkhandelwal/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <div class="details">
+            <p>Email: Notesadda@gmail.com</p>
+            <p>Phone: +91-8287634509</p>
+          </div>
+        </div>
+      </div>
+      <div id="something">
+        <div class="title">
+          <h3>NOTESADDA</h3>
+          <p>Copyright &#64; 2024</p>
+        </div>
+        <div class="security">
+          <span>
+            <a href="">Copyright</a>|<a href="">Privacy</a>|<a href="">Security</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
+
+</html>

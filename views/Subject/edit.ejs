@@ -1,58 +1,134 @@
-<% layout("/layouts/boilerplate") %>
+<%- layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/edit.css">
 
-<div class="row mt-3">
-  <div class="col-8 offset-2">
-    <h3>Edit Notes</h3>
-    <form
-      method="POST"
-      action="/Subject/<%= subject._id %>?_method=PUT"
-      novalidate
-      class="needs-validation"
-      enctype="multipart/form-data"
-    >
-      <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input
+<div class="container edit-notes-container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0">Edit Note</h3>
+        </div>
+        
+        <div class="card-body">
+          <form 
+            method="POST" 
+            action="/Subject/<%= subject._id %>?_method=PUT"
+            enctype="multipart/form-data"
+            class="needs-validation" 
+            novalidate
+          >
+            <div class="row mb-3">
+              <div class="col-12">
+                <label for="title" class="form-label">Title</label>
+                <input
           name="Subject[title]"
           value="<%= subject.title %>"
-          type="text"
-          class="form-control"
-          required
-        />
-        <div class="valid-feedback">Title looks good</div>
-      </div>
+                  type="text"
+                  class="form-control"
+                  required
+                  placeholder="Enter note title"
+                />
+                <div class="invalid-feedback">
+                  Please provide a valid title
+                </div>
+              </div>
+            </div>
 
-      <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <textarea name="Subject[description]" class="form-control" required>
-<%= subject.description %></textarea
-        >
-        <div class="invalid-feedback">Description should be valid</div>
-      </div>
+            <div class="row mb-3">
+              <div class="col-12">
+                <label for="description" class="form-label">Description</label>
+                <textarea 
+                  name="Subject[description]"
+                  class="form-control" 
+                  rows="4"
+                  required
+                  placeholder="Provide a detailed description"
+                ><%= subject.description %></textarea>
+                <div class="invalid-feedback">
+                  Please provide a description
+                </div>
+              </div>
+            </div>
 
-      <div class="mb-3">
-        Original Subject Notes Image <br />
-        <img src="<%= originalImageUrl %>" height="150px" width="auto" />
-      </div>
+            <div class="row mb-3">
+              <div class="col-12">
+                <label class="form-label">Current Image</label>
+                <div class="image-preview text-center">
+                  <img 
+                    src="<%= originalImageUrl %>" 
+                    class="img-fluid rounded" 
+                    alt="Current Image"
+                    style="max-height: 250px;"
+                  />
+                </div>
+              </div>
+            </div>
 
-      <div class="mb-3">
-        <label for="image" class="form-label">Upload New Image</label>
-        <input name="Subject[image]" type="file" class="form-control" />
-      </div>
+            <div class="row mb-3">
+              <div class="col-12">
+                <label for="image" class="form-label">Upload New Image</label>
+                <input 
+                  name="Subject[image]"
+                  type="file" 
+                  class="form-control" 
+                  accept="image/*"
+                />
+                <small class="form-text text-muted">
+                  Choose a new image to replace the current one (optional)
+                </small>
+              </div>
+            </div>
 
-      <div class="mb-3">
-        <label for="pdf" class="form-label">Drive Link</label>
-        <input
-          id="drive-link"
-          type="text"
+            <div class="row mb-3">
+              <div class="col-12">
+                <label for="drive-link" class="form-label">Drive Link</label>
+                <input
+                  id="drive-link"
+                  type="url"
           name="Subject[link]"
           value="<%= subject.pdf.link %>"
-          class="form-control"
-          required
-        />
-      </div>
+                  class="form-control"
+                  required
+                  placeholder="Paste Google Drive share link"
+                />
+                <div class="invalid-feedback">
+                  Please provide a valid drive link
+                </div>
+                <small class="form-text text-muted">
+                  Ensure the link is publicly accessible
+                </small>
+              </div>
+            </div>
 
-      <button class="btn btn-dark edit-btn mb-3">Edit</button>
-    </form>
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">
+                  Update Note
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>

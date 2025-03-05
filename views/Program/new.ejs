@@ -1,63 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Post</title>
-  </head>
-  <body>
-    <div class="row mt-3">
-      <div class="col-8 offset-2">
-        <h3>Create a New Notes</h3>
-        <form
-          method="POST"
-          action="/Program"
-          novalidate
-          class="needs-validation"
-          enctype="multipart/form-data"
-        >
-          <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input
-              name="Program[title]"
-              placeholder="enter title"
-              type="text"
-              class="form-control"
-              required
-            />
-          </div>
-          <div class="valid-feedback">Title looks good</div>
-          <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea name="Program[description]" class="form-control" required>
-            </textarea>
-            <div class="invalid-feedback">decription should be valid</div>
-          </div>
+<%- layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/add-post.css">
 
-          <div class="mb-2">
-            <label for="image" class="form-lable">Uplode File</label>
-            <input
-              type="file"
-              name="Program[image]"
-              class="form-control"
-              required
-            />
-          </div>
-          <div class="mb-2">
-            <label for="image" class="form-lable">Provide Drive Link</label>
-            <input
-              id="drive-link"
-              type="text"
-              name="Program[link]"
-              class="form-control"
-              required
-            />
-            <div class="invalid-feedback">Drive Should Be Access for All</div>
-          </div>
+<div class="container-fluid create-notes-container">
+      <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+          <h3 class="mb-0">Create New Note</h3>
+        </div>
+        
+        <div class="card-body p-4">
+          <form 
+            method="POST" 
+            action="/Program" 
+            enctype="multipart/form-data"
+            class="needs-validation" 
+            novalidate
+          >
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input
+                name="Program[title]"
+                placeholder="Enter note title"
+                type="text"
+                class="form-control form-control-lg"
+                required
+              />
+              <div class="invalid-feedback">
+                Please provide a note title
+              </div>
+            </div>
 
-          <button class="btn btn-dark add-btn mb-3">Add</button>
-        </form>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea 
+                name="Program[description]" 
+                class="form-control form-control-lg" 
+                rows="4"
+                placeholder="Provide a detailed description of the note"
+                required
+              ></textarea>
+              <div class="invalid-feedback">
+                Please provide a description
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="image" class="form-label">Upload Image</label>
+              <input
+                type="file"
+                name="Program[image]"
+                class="form-control form-control-lg"
+                accept="image/*"
+                required
+              />
+              <div class="invalid-feedback">
+                Please upload an image
+              </div>
+              <small class="form-text text-muted">
+                Supported formats: JPG, PNG, GIF (Max 5MB)
+              </small>
+            </div>
+
+            <div class="mb-3">
+              <label for="drive-link" class="form-label">Drive Link</label>
+              <input
+                id="drive-link"
+                type="url"
+                name="Program[link]"
+                class="form-control form-control-lg"
+                placeholder="Paste Google Drive share link"
+                required
+              />
+              <div class="invalid-feedback">
+                Please provide a valid, publicly accessible drive link
+              </div>
+              <small class="form-text text-muted">
+                Ensure the link is set to "Anyone with the link can view"
+              </small>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100 mt-3">
+              Create Note
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
-  </body>
-</html>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
