@@ -1,18 +1,44 @@
-<% layout("/layouts/boilerplate") %> 
+<<<<<<< HEAD
+<%- layout("/layouts/boilerplate") %> 
 
-<h1 class="pro-head">Programmings Notes</h1>
-
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
-<% for(let note of allNotes) { %>
-    <div class="note-card">
-        <img src="<%= note.image.url %>" class="note-img">
-        <div class="note-body">
-            <h1 class="note-title"><%= note.title %></h1>
-
-            <p class="note-info"><%= note.description.substring(0,100) %>... %></p>
-            <button class="note-btn"><a href="/Program/<%=note._id %>">Read More</a></button>
+<div class="container">
+  <h1 class="pro-head text-center">Programming Notes</h1>
+  
+  <div class="notes-container">
+    <% for(let note of allNotes) { %>
+      <div class="note-card">
+        <div class="note-card-inner">
+          <div class="note-front">
+            <img src="<%= note.image.url %>" class="note-img" alt="<%= note.title %>">
+            <h2 class="note-title-front"><%= note.title %></h2>
+          </div>
+          <div class="note-body">
+            <h2 class="note-title"><%= note.title %></h2>
+            <p class="note-info"><%= note.description.substring(0,100) %>...</p>
+            <a href="/Program/<%=note._id %>" class="note-btn">Read More</a>
+          </div>
         </div>
+      </div>
+    <% } %>
+  </div>
+=======
+<% layout("/layouts/boilerplate") %> 
     
+<div class="notes-data">
+<h1>All Notes</h1>
+<div class="row  row-cols-lg-3  row-cols-md-2 row-cols-sm-1 mt-3">
+<% for(let note of allNotes) { %>
+    <div class="card col note-card">
+        <img src="<%= note.image.url %>" class="card-img-top note-card-img" alt="Note_image">
+    <div class="card-body">
+    <h5 class="card-title"><%= note.title %></h5>
+	<hr>
+    <p class="card-text"><%= note.description %></p>
+    <a href="#" class="card-link">Download Here</a>
+    <a href="/Notes/<%=note._id %>" class="card-link">Read More</a>
     </div>
+</div>
 <% } %>
 
+>>>>>>> aade56d (add program files and routes)
+</div>
