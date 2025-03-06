@@ -2,7 +2,11 @@
 const express = require("express");
 const app = express();
 const router = express.Router();
-const { isLoggedIn, validateProgram } = require("../middleware.js");
+const {
+  isLoggedIn,
+  validateProgram,
+  isProgramOwner,
+} = require("../middleware.js");
 const Program = require("../models/Program.js");
 const multer = require("multer");
 const { storage } = require("../cloudinaryConfigure.js");
@@ -30,8 +34,10 @@ router.get("/:id", isLoggedIn, async (req, res) => {
 router.post(
   "/",
   isLoggedIn,
-  validateProgram,
+
   upload.single("Program[image]"),
+  validateProgram,
+
   async (req, res) => {
     let url = req.file.path;
     const newProgram = new Program(req.body.Program);
@@ -42,7 +48,8 @@ router.post(
 );
 
 //edit route
-router.get("/:id/edit", isLoggedIn, async (req, res) => {
+
+router.get("/:id/edit", isLoggedIn, isProgramOwner, async (req, res) => {
   let { id } = req.params;
   const program = await Program.findById(id);
   if (!program) {
@@ -57,8 +64,11 @@ router.get("/:id/edit", isLoggedIn, async (req, res) => {
 router.put(
   "/:id",
   isLoggedIn,
-  validateProgram,
+
+  isProgramOwner,
   upload.single("Program[image]"),
+  validateProgram,
+
   async (req, res) => {
     let { id } = req.params;
     let program = await Program.findByIdAndUpdate(id, { ...req.body.Program });
@@ -73,7 +83,9 @@ router.put(
 
 //delete route
 
-router.delete("/:id", isLoggedIn, async (req, res) => {
+
+router.delete("/:id", isLoggedIn, isProgramOwner, async (req, res) => {
+
   let { id } = req.params;
   let deleteProgram = await Program.findByIdAndDelete(id);
   req.flash("success", "Program Deleted");

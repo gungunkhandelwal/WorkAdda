@@ -1,23 +1,30 @@
-<%- layout("/layouts/boilerplate") %> 
+
+<%- layout("/layouts/boilerplate") %
 
 <div class="container">
   <h1 class="pro-head text-center">Programming Notes</h1>
-  
+
   <div class="notes-container">
     <% for(let note of allNotes) { %>
-      <div class="note-card">
-        <div class="note-card-inner">
-          <div class="note-front">
-            <img src="<%= note.image.url %>" class="note-img" alt="<%= note.title %>">
-            <h2 class="note-title-front"><%= note.title %></h2>
-          </div>
-          <div class="note-body">
-            <h2 class="note-title"><%= note.title %></h2>
-            <p class="note-info"><%= note.description.substring(0,100) %>...</p>
-            <a href="/Program/<%=note._id %>" class="note-btn">Read More</a>
-          </div>
+    <div class="note-card">
+      <div class="note-card-inner">
+        <div class="note-front">
+          <img
+            src="<%= note.image.url %>"
+            class="note-img"
+            alt="<%= note.title %>"
+          />
+          <h2 class="note-title-front"><%= note.title %></h2>
+        </div>
+        <div class="note-body">
+          <h2 class="note-title"><%= note.title %></h2>
+          <p class="note-info"><%= note.description.substring(0,100) %>...</p>
+          <a href="/Program/<%=note._id %>" class="note-btn">Read More</a>
         </div>
       </div>
+    </div>
     <% } %>
   </div>
 </div>
+
+

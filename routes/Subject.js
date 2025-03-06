@@ -2,7 +2,11 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const Subject = require("../models/Subject.js");
-const { isLoggedIn, validateSubject } = require("../middleware.js");
+const {
+  isLoggedIn,
+  validateSubject,
+  isSubjectOwner,
+} = require("../middleware.js");
 const multer = require("multer");
 const { storage } = require("../cloudinaryConfigure.js");
 const upload = multer({ storage });
@@ -28,8 +32,8 @@ router.get("/:id", async (req, res) => {
 router.post(
   "/",
   isLoggedIn,
-  validateSubject,
   upload.single("Subject[image]"),
+  validateSubject,
   async (req, res) => {
     let url = req.file.path;
     const newSubject = new Subject(req.body.Subject);
@@ -40,7 +44,7 @@ router.post(
 );
 
 //edit route
-router.get("/:id/edit", isLoggedIn, async (req, res) => {
+router.get("/:id/edit", isLoggedIn, isSubjectOwner, async (req, res) => {
   let { id } = req.params;
   const subject = await Subject.findById(id);
   if (!subject) {
@@ -55,8 +59,9 @@ router.get("/:id/edit", isLoggedIn, async (req, res) => {
 router.put(
   "/:id",
   isLoggedIn,
-  validateSubject,
+  isSubjectOwner,
   upload.single("Subject[image]"),
+  validateSubject,
   async (req, res) => {
     let { id } = req.params;
     let Subject = await Subject.findByIdAndUpdate(id, { ...req.body.Subject });
@@ -71,7 +76,7 @@ router.put(
 
 //delete route
 
-router.delete("/:id", isLoggedIn, async (req, res) => {
+router.delete("/:id", isLoggedIn, isSubjectOwner, async (req, res) => {
   let { id } = req.params;
   let deleteSubject = await Subject.findByIdAndDelete(id);
   req.flash("success", "Subject Deleted");
