@@ -18,16 +18,23 @@
 }
 
 @keyframes slideIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.flash-success { 
+.flash-success {
     background-color: #10b981;
     border-left: 4px solid #059669;
 }
 
-.flash-error { 
+.flash-error {
     background-color: #ef4444;
     border-left: 4px solid #b91c1c;
 }

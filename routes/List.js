@@ -1,23 +1,16 @@
-const mongoose=require("mongoose");
+const express =require("express");
+const app =express();
+const router=express.Router();
+const List =require("../models/List.js")
 
-const Schema=mongoose.Schema;
 
 
-const ListSchema = new Schema({
-    title:{
-        type:String,
-        required:true
-    },
-    description:{
-        type:String
-    },
-    image:{
-        url:String,
-    },
-    pdf:{
-        link:String,
-    },
-})
 
-const List =mongoose.model("List",ListSchema);
-module.exports = List;
+
+//Home Route
+router.get("/",(req,res)=>{
+    res.render("Notes/Home.ejs");
+});
+
+
+module.exports = router;

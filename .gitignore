@@ -44,11 +44,6 @@ out/
 .DS_Store
 Thumbs.db
 
-
-
-public/assets/images
-
-
 # Ignore temporary files
 tmp/
 temp/

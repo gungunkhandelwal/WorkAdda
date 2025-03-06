@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%- layout("/layouts/boilerplate") %> 
 
 <div class="container">
@@ -21,24 +20,4 @@
       </div>
     <% } %>
   </div>
-=======
-<% layout("/layouts/boilerplate") %> 
-    
-<div class="notes-data">
-<h1>All Notes</h1>
-<div class="row  row-cols-lg-3  row-cols-md-2 row-cols-sm-1 mt-3">
-<% for(let note of allNotes) { %>
-    <div class="card col note-card">
-        <img src="<%= note.image.url %>" class="card-img-top note-card-img" alt="Note_image">
-    <div class="card-body">
-    <h5 class="card-title"><%= note.title %></h5>
-	<hr>
-    <p class="card-text"><%= note.description %></p>
-    <a href="#" class="card-link">Download Here</a>
-    <a href="/Notes/<%=note._id %>" class="card-link">Read More</a>
-    </div>
-</div>
-<% } %>
-
->>>>>>> aade56d (add program files and routes)
 </div>
